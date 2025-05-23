@@ -5,12 +5,18 @@ public class Car_Chapter15 {
 	//フィールド
 	private int gear  = 1;
 	private int speed = 10;
+		
+	
+	public Car_Chapter15( int gear, int speed ) {
+		this.gear  = gear;
+		this.speed = speed;
+	}
 	
 	
 	//メソッド
 	public void gearChange( final int afterGear) {
-		
-		int gear = this.gear;
+		int beforeGear = this.gear;
+		this.gear = afterGear;
 		
 		switch (afterGear) {
 		case 1 -> this.speed = 10;
@@ -21,12 +27,13 @@ public class Car_Chapter15 {
 		default -> this.speed = 10;
 		}
 		
-		System.out.println("ギア" + this.gear + "から" + afterGear +"に切り替えました");
-		}
+		System.out.println( "ギア" + beforeGear + "から" + afterGear + "に切り替えました");
+	
+	}
 		
-	public void speed( final int run) {
+	public void run() {
 		
-		System.out.println("速度は" + this.speed +"kmです");
+		System.out.println("速度は時速" + this.speed +"kmです");
 		
 		
 	}
